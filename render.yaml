@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: urdu-translation-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: ALLOWED_ORIGINS
+        value: "*"  # Update this with your Cloudflare Pages domain after deployment
+      - key: PYTHON_VERSION
+        value: "3.11"
