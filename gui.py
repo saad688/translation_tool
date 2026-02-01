@@ -8,7 +8,7 @@ from PyQt6.QtGui import QFont, QIcon
 from backend import TranslationBackend
 
 # Hardcoded API Key
-API_KEY = "AIzaSyA9JrVkyP2hneAuQ-uoCp_1KEH8AQ63pgs"
+
 
 class WorkerThread(QThread):
     progress_update = Signal(int)
